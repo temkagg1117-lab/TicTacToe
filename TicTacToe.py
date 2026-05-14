@@ -66,6 +66,7 @@ def draw_horizontal_line(y):
     turtle.color("green")
     turtle.penup()
     turtle.goto(0, y)
+    turtle.setheading(0)
     turtle.pendown()
     turtle.forward(300)
     turtle.penup()
@@ -108,14 +109,14 @@ def check_win(board, player):
     ]
     for combo in wins:
         if all(board[i] == player for i in combo):
-            if combo == [0,1,2]: draw_horizontal_line(50)
+            if combo == [0,1,2]: draw_horizontal_line(250)
             elif combo == [3,4,5]: draw_horizontal_line(150)
-            elif combo == [6,7,8]: draw_horizontal_line(250)
+            elif combo == [6,7,8]: draw_horizontal_line(50)
             elif combo == [0,3,6]: draw_vertical_line(50)
             elif combo == [1,4,7]: draw_vertical_line(150)
             elif combo == [2,5,8]: draw_vertical_line(250)
-            elif combo == [0,4,8]: draw_left_angle_line()
-            elif combo == [2,4,6]: draw_right_angle_line()
+            elif combo == [0,4,8]: draw_right_angle_line()
+            elif combo == [2,4,6]: draw_left_angle_line()
             return True
     return False
 
